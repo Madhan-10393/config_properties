@@ -1,0 +1,33 @@
+---
+#spring:
+#  application:
+#    name: discovery-service
+...
+---
+#server:
+#  port: 7001
+
+spring:
+  profiles:
+    active: master
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: false
+...
+---
+#server:
+#  port: 7002
+
+#spring:
+#  profiles:
+#    active: slave
+
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      defaultZone: http://localhost:7001/eureka
+...

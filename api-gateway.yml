@@ -1,0 +1,23 @@
+#server:
+#  port: 3333
+
+spring:
+#  application:
+#    name: api-gateway
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: hotel-management-api
+              uri: lb://hotel-management
+              predicates:
+                - Path=/hotel/**
+            - id: product-management-api
+              uri: lb://product-management
+              predicates:
+                - Path=/product/**
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/

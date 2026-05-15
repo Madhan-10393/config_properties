@@ -1,0 +1,29 @@
+#server:
+#  port: 2222
+
+spring:
+#  application:
+#    name: product-management
+  boot:
+    admin:
+      client:
+        url: http://localhost:8044/
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+
+#feign:
+#  okhttp:
+#    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+
+
+
